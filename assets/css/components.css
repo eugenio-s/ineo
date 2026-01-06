@@ -1,0 +1,493 @@
+/* =========================
+   GRID / LAYOUT
+========================= */
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.wide{ grid-column: 1 / -1; }
+
+@media (min-width: 900px){
+  .grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  #pricing{ grid-column: span 2; }
+}
+
+
+/* =========================
+   CARDS / PANELS
+========================= */
+
+.card,
+.panel,
+.pricing-card{
+  position: relative;
+  background: linear-gradient(180deg, var(--panel-top), var(--panel-bot));
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  min-height: 220px;
+  transform: translateZ(0);
+  transition:
+    transform .26s ease,
+    box-shadow .26s ease,
+    border-color .26s ease,
+    background-color .26s ease,
+    filter .26s ease;
+}
+
+.card:hover,
+.panel:hover,
+.pricing-card:hover{
+  transform: translateY(-4px);
+  border-color: color-mix(in oklab, var(--accent-color) 55%, rgba(255,255,255,.1));
+  box-shadow: 
+    0 16px 40px rgba(0,0,0,.28),
+    0 0 26px var(--accent-glow);
+}
+
+/* subtle inner edge */
+.card::after,
+.panel::after,
+.pricing-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .26s ease;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.06),
+    inset 0 0 0 2px rgba(0,0,0,.18);
+}
+
+.card:hover::after,
+.panel:hover::after,
+.pricing-card:hover::after{
+  opacity:1;
+}
+
+
+/* =========================
+   BUTTONS / LINKS
+========================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:14px 8px 0;
+  padding:12px 16px;
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.14);
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+  cursor:pointer;
+  transform: translateZ(0);
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background .18s ease,
+    border-color .18s ease;
+}
+
+.btn:hover{
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
+  background: rgba(255,255,255,.06);
+  box-shadow:
+    0 12px 28px rgba(0,0,0,.28),
+    0 0 18px var(--accent-glow);
+}
+
+.btn:active{
+  transform: translateY(0) scale(.99);
+}
+
+
+/* CTA arrow (optional span) */
+.btn .cta-arrow{
+  margin-left:10px;
+  transition:transform .18s ease, opacity .18s ease;
+  opacity:.85;
+}
+
+.btn:hover .cta-arrow{
+  transform:translateX(6px);
+  opacity:1;
+}
+
+.link{
+  color:var(--accent-color);
+  text-decoration:none;
+}
+
+.link:hover{ text-decoration:underline; }
+
+
+/* =========================
+   TEXT HELPERS
+========================= */
+
+.muted{ color:rgba(245,245,245,.72); }
+.tiny{ font-size:.9rem; margin-top:10px; }
+
+
+/* =========================
+   PILLS / TAGS
+========================= */
+
+.pill-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px;
+}
+
+.pill{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.04);
+  font-size:.9rem;
+  font-weight:600;
+}
+
+
+/* =========================
+   FORM ELEMENTS
+========================= */
+
+.label{
+  display:block;
+  margin:12px 0 10px;
+  font-weight:600;
+  opacity:.9;
+}
+
+.input{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.03);
+  color:#fff;
+}
+
+.input:focus{
+  border-color:var(--accent-color);
+  box-shadow:0 0 12px var(--accent-glow);
+}
+
+.input-hidden{
+  position:absolute;
+  left:-9999px;
+  opacity:0;
+}
+
+
+/* =========================
+   PRICING UI
+========================= */
+
+.field{ margin-top:14px; }
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.03);
+}
+
+.qty-btn{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.04);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.qty-btn:hover{
+  border-color:var(--accent-color);
+  box-shadow:0 0 14px var(--accent-glow);
+  transform:translateY(-1px);
+}
+
+.qty-value{
+  min-width:24px;
+  text-align:center;
+  font-weight:800;
+}
+
+.breakdown{
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px dashed rgba(255,255,255,.14);
+  display:grid;
+  gap:10px;
+}
+
+.breakdown .row{
+  display:flex;
+  justify-content:space-between;
+}
+
+.breakdown .total{
+  margin-top:6px;
+  padding-top:10px;
+  border-top:1px solid rgba(255,255,255,.1);
+  font-size:1.2rem;
+  font-weight:800;
+}
+
+#priceValue{
+  color:var(--accent-color);
+  text-shadow:0 0 10px var(--accent-glow);
+  transition: transform .18s ease;
+}
+
+.price-bump{
+  transform: scale(1.05);
+}
+
+/* =========================
+   PROJECTS / PROCESS
+========================= */
+
+.project{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+
+.project:first-of-type{
+  border-top:none;
+  padding-top:0;
+}
+
+.process{
+  list-style:none;
+  display:grid;
+  gap:12px;
+  padding:0;
+  margin-top:14px;
+}
+
+.process li{
+  display:grid;
+  grid-template-columns:38px 1fr;
+  gap:12px;
+  padding:12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.03);
+}
+
+.step{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.04);
+  font-weight:800;
+  color:var(--accent-color);
+  box-shadow:0 0 10px var(--accent-glow);
+}
+
+:root[data-mode="garage"] .step{ border-radius:10px; }
+
+
+/* =========================
+   FLEX / MOTION
+========================= */
+
+html.mode-pulse{
+  animation:modePulse .42s ease;
+}
+
+@keyframes modePulse{
+  0%{ filter:brightness(1); }
+  40%{ filter:brightness(1.06); }
+  100%{ filter:brightness(1); }
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(14px);
+  transition:opacity .52s ease, transform .52s ease;
+}
+
+.reveal.is-in{
+  opacity:1;
+  transform:none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  html.mode-pulse{ animation:none; }
+}
+
+/* =========================
+   CHIPS (Package switch)
+========================= */
+
+.chip{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.04);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+
+  outline: none;
+  appearance: none;
+
+  transform: translateZ(0);
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background .18s ease,
+    border-color .18s ease;
+}
+
+/* Active state (already used by theme.js) */
+.chip.is-active{
+  border-color: var(--accent-color);
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
+.chip:hover{
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
+  background: rgba(255,255,255,.06);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.25),
+    0 0 18px var(--accent-glow);
+}
+
+.chip:focus-visible{
+  box-shadow:
+    0 0 0 2px var(--accent-color),
+    0 0 18px var(--accent-glow);
+}
+
+.check{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 14px;
+  background: rgba(255,255,255,.02);
+
+  cursor: pointer;
+  position: relative;
+
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease,
+    background .18s ease,
+    transform .18s ease;
+}
+
+/* =========================
+   ADD-ON CHECK (FINAL)
+========================= */
+
+.check:hover{
+  border-color: rgba(255,255,255,.25);
+}
+
+/* Selected */
+.check:has(input:checked){
+  border-color: var(--accent-color);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.02)
+    );
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 0 22px var(--accent-glow);
+
+  animation: addonPop .22s ease;
+}
+
+/* Text */
+.check-label{
+  flex: 1;
+  transition: color .18s ease;
+}
+
+.check:has(input:checked) .check-label{
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* Price pill (tone it down slightly) */
+.check .pill{
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease,
+    background .18s ease;
+}
+
+.check:has(input:checked) .pill{
+  border-color: var(--accent-color);
+  background: rgba(255,255,255,.08);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Tick */
+.check::after{
+  content: "✓";
+  opacity: 0;
+  font-weight: 800;
+  color: var(--accent-color);
+  transition: opacity .18s ease, transform .18s ease;
+  transform: scale(.8);
+}
+
+.check:has(input:checked)::after{
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes addonPop{
+  0%{
+    transform: translateY(-1px) scale(.98);
+  }
+  60%{
+    transform: translateY(-1px) scale(1.02);
+  }
+  100%{
+    transform: translateY(-1px) scale(1);
+  }
+}
+
