@@ -1,0 +1,78 @@
+/* HEADER */
+header{
+  padding: 64px 20px;
+  text-align: center;
+    background:
+    radial-gradient(1200px 600px at 50% -10%, var(--hero-glow), transparent 60%),
+    #111;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+header h1{
+  font-size: clamp(34px, 4vw, 54px);
+  letter-spacing: -0.03em;
+  text-transform: none;
+}
+
+header p{
+  color: var(--accent-color);
+  margin-top: 10px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  opacity: .95;
+}
+
+.header-actions{
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* MAIN CONTENT */
+main{
+  max-width: 1100px;
+  margin: 44px auto;
+  padding: 0 20px;
+}
+
+section{ margin-bottom: 24px; }
+
+h2{
+  margin-bottom: 14px;
+  border-bottom: 2px dashed rgba(255,255,255,.14); /* cleaner */
+  display: inline-block;
+  text-shadow: none;
+  letter-spacing: -0.02em;
+}
+
+.card h2 { margin-bottom: 14px; 
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.card p { color: rgba(245,245,245,.78); 
+}
+
+/*CONTACT */
+.contact-form textarea.input{
+  resize: vertical;
+  min-height: 120px;
+}
