@@ -1,0 +1,155 @@
+:root {
+  --accent-color: #ff3b3b;
+  --accent-glow: rgba(255, 59, 59, 0.45);
+}
+
+/* =========================
+   BASE THEME VARIABLES
+========================= */
+
+:root {
+  --panel-top: rgba(255,255,255,.06);
+  --panel-bot: rgba(255,255,255,.025);
+  --panel-border: rgba(255,255,255,.12);
+  --hero-glow: rgba(255, 59, 59,.12);
+  --radius-card: 20px;
+}
+
+/* =========================
+   GARAGE PACKAGE (RED)
+========================= */
+
+:root[data-mode="garage"] {
+  --accent-color: #ff3b3b;
+  --accent-glow: rgba(255, 59, 59, 0.5);
+  --panel-top: rgba(255,255,255,.055);
+  --panel-bot: rgba(255,255,255,.02);
+  --panel-border: rgba(255,255,255,.15);
+  --hero-glow: rgba(255, 59, 59, .15);
+  --radius-card: 18px;
+}
+
+/* Garage-specific enhancements */
+:root[data-mode="garage"] body {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 59, 59, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 59, 59, 0.05) 0%, transparent 50%),
+    #0a0a0a;
+}
+
+:root[data-mode="garage"] .btn-primary {
+  background: linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 100%);
+}
+
+:root[data-mode="garage"] .step {
+  border-width: 2px;
+}
+
+/* =========================
+   FOOD PACKAGE (CYAN)
+========================= */
+
+:root[data-mode="food"] {
+  --accent-color: #00ffcc;
+  --accent-glow: rgba(0, 255, 204, 0.5);
+  --panel-top: rgba(255,255,255,.07);
+  --panel-bot: rgba(255,255,255,.03);
+  --panel-border: rgba(255,255,255,.11);
+  --hero-glow: rgba(0, 255, 204, .15);
+  --radius-card: 24px;
+}
+
+/* Food-specific enhancements */
+:root[data-mode="food"] body {
+  background: 
+    radial-gradient(circle at 80% 80%, rgba(0, 255, 204, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 204, 0.05) 0%, transparent 50%),
+    #0a0a0a;
+}
+
+:root[data-mode="food"] .btn-primary {
+  background: linear-gradient(135deg, #00ffcc 0%, #00d4aa 100%);
+  color: #000;
+}
+
+:root[data-mode="food"] .btn-primary:hover {
+  background: linear-gradient(135deg, #1affda 0%, #00ffcc 100%);
+}
+
+:root[data-mode="food"] .step {
+  border-width: 2px;
+  border-radius: 16px;
+}
+
+:root[data-mode="food"] .status {
+  background: var(--accent-color);
+  color: #000;
+}
+
+/* =========================
+   MODE TRANSITION EFFECTS
+========================= */
+
+html.mode-pulse {
+  animation: modePulse 0.5s ease;
+}
+
+@keyframes modePulse {
+  0% { 
+    filter: brightness(1);
+  }
+  50% { 
+    filter: brightness(1.15) saturate(1.2);
+  }
+  100% { 
+    filter: brightness(1);
+  }
+}
+
+/* Smooth transitions for theme changes */
+:root,
+body,
+.card,
+.panel,
+.btn,
+.step,
+.pill,
+.check {
+  transition-property: 
+    background,
+    background-color,
+    border-color,
+    color,
+    box-shadow;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+/* =========================
+   DARK MODE OPTIMIZATIONS
+========================= */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --panel-top: rgba(255,255,255,.07);
+    --panel-bot: rgba(255,255,255,.03);
+  }
+}
+
+/* =========================
+   HIGH CONTRAST MODE
+========================= */
+
+@media (prefers-contrast: high) {
+  :root {
+    --panel-border: rgba(255,255,255,.3);
+  }
+  
+  .btn {
+    border-width: 2px;
+  }
+  
+  .card {
+    border-width: 2px;
+  }
+}

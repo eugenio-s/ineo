@@ -1,0 +1,303 @@
+/* DIVINE INTERGALACTIC MODE-SWITCHING EFFECTS */
+
+/* Color Wave Effect */
+.color-wave {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: waveExpand 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
+@keyframes waveExpand {
+  0% {
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    width: 3000px;
+    height: 3000px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+/* Particle Burst Effect */
+.particle-container {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+}
+
+.mode-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: particleBurst 1.5s cubic-bezier(0, 0.5, 0.5, 1) forwards;
+  box-shadow: 0 0 10px currentColor;
+}
+
+@keyframes particleBurst {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Mode Switching State */
+.mode-switching {
+  animation: modeSwitchPulse 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes modeSwitchPulse {
+  0% {
+    filter: brightness(1) saturate(1);
+  }
+  25% {
+    filter: brightness(1.15) saturate(1.3);
+  }
+  50% {
+    filter: brightness(1.05) saturate(1.1);
+  }
+  75% {
+    filter: brightness(1.1) saturate(1.2);
+  }
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+}
+
+/* Enhanced Mode Pulse (existing) */
+html.mode-pulse {
+  animation: enhancedModePulse 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes enhancedModePulse {
+  0% { 
+    filter: brightness(1) saturate(1);
+  }
+  50% { 
+    filter: brightness(1.12) saturate(1.25) hue-rotate(5deg);
+  }
+  100% { 
+    filter: brightness(1) saturate(1);
+  }
+}
+
+/* Chip Enhancement - Make them more prominent */
+.chips {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  position: relative;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.05);
+  color: #fff;
+  font-weight: 700;
+  font-family: var(--font-display);
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  outline: none;
+  appearance: none;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Chip glow effect */
+.chip::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 999px;
+  padding: 2px;
+  background: linear-gradient(135deg, transparent, var(--accent-color), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.chip.is-active::before {
+  opacity: 1;
+  animation: chipGlowRotate 3s linear infinite;
+}
+
+@keyframes chipGlowRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.chip-icon {
+  font-size: 24px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-block;
+}
+
+/* Active state with spectacular effects */
+.chip.is-active {
+  border-color: var(--accent-color);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.12),
+    color-mix(in oklab, var(--accent-color) 15%, transparent)
+  );
+  box-shadow: 
+    0 0 30px var(--accent-glow),
+    inset 0 1px 0 rgba(255,255,255,.2);
+  transform: scale(1.05);
+}
+
+.chip:hover {
+  transform: translateY(-4px) scale(1.08);
+  border-color: var(--accent-color);
+  background: rgba(255,255,255,.1);
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.3),
+    0 0 35px var(--accent-glow);
+}
+
+.chip:hover .chip-icon {
+  transform: scale(1.3) rotate(15deg);
+}
+
+.chip:active {
+  transform: scale(0.95);
+}
+
+.chip.is-active .chip-icon {
+  animation: chipIconPulse 2s ease-in-out infinite;
+}
+
+@keyframes chipIconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.chip:focus-visible {
+  box-shadow:
+    0 0 0 4px var(--accent-color),
+    0 0 40px var(--accent-glow);
+}
+
+/* Smooth transitions for all mode-affected elements */
+.card,
+.panel,
+.btn,
+.step,
+.pill,
+.check,
+.link,
+.price-display,
+.stat-value,
+.guarantee-icon,
+.status {
+  transition-property: 
+    background,
+    background-color,
+    border-color,
+    color,
+    box-shadow,
+    text-shadow;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Header transitions */
+header::before {
+  transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Body background transition */
+body {
+  transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root[data-mode="garage"] body {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 59, 59, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 59, 59, 0.05) 0%, transparent 50%),
+    #0a0a0a;
+}
+
+:root[data-mode="food"] body {
+  background: 
+    radial-gradient(circle at 80% 80%, rgba(0, 255, 204, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 204, 0.05) 0%, transparent 50%),
+    #0a0a0a;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .color-wave,
+  .mode-particle,
+  .mode-switching,
+  .chip::before {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .chip:hover,
+  .chip.is-active {
+    transform: none !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .chip {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+  
+  .chip-icon {
+    font-size: 20px;
+  }
+  
+  .chips {
+    width: 100%;
+    justify-content: center;
+  }
+}
