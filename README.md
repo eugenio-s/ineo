@@ -1,21 +1,65 @@
-# Pricing Landing Page (Demo)
+# INEO – Simple Websites That Work
 
-Live site: https://eugenio-s.github.io/pricing-landing-page/
+INEO is a clean, fast, and modern website built with simplicity and performance in mind.  
+The goal is straightforward: create websites that look good, load fast, and actually help businesses get customers.
 
-A clean, mobile-first landing page with:
-- Theme switch (Red / Cyan package)
-- Pricing calculator (1–5 pages)
-- One-time add-ons (contact form, basic SEO)
-- Copy quote button
-- Contact section
+🌐 **Live site:** https://ineo.design
 
-## Tech
-HTML / CSS / JavaScript (vanilla)
+---
 
-## Edit
-- `index.html`
-- `assets/css/*`
-- `assets/js/*`
+## ✨ Features
 
-## Contact
-Email: eugeniostrods@gmail.com
+- Clean, modern UI
+- Fully responsive (mobile-first)
+- Fast load times
+- Minimal, no-fluff design
+- Clear pricing and service offering
+- Hosted on GitHub Pages with a custom domain
+
+---
+
+## 🛠 Built With
+
+- HTML
+- CSS
+- JavaScript
+- GitHub Pages
+
+No frameworks, no bloat — just clean, maintainable code.
+
+---
+
+## 🚀 Deployment
+
+This site is deployed using **GitHub Pages**.
+
+- Branch: `main`
+- Folder: `/root`
+- Custom domain: `www.ineo.design`
+- HTTPS enabled
+
+---
+
+## 🎯 Purpose
+
+INEO is designed for:
+- Small businesses
+- Local services
+- Freelancers
+- Startups needing a simple, professional online presence
+
+---
+
+## 📬 Contact
+
+Interested in working together or have questions?
+
+Visit: https://ineo.design  
+Or reach out via the contact section on the site.
+
+---
+
+## 📄 License
+
+This project is for personal and commercial use.  
+All rights reserved unless stated otherwise.
