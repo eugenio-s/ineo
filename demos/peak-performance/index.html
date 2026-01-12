@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Performance Fitness - Transform Your Body, Transform Your Life</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">PEAK PERFORMANCE</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#membership">Membership</a></li>
+                <li><a href="#trainers">Trainers</a></li>
+                <li><a href="#transformations">Results</a></li>
+                <li><a href="#contact" class="cta-btn">Join Now</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-small">Welcome to</span>
+                <span class="hero-main">PEAK PERFORMANCE</span>
+                <span class="hero-tagline">Transform Your Body. Transform Your Life.</span>
+            </h1>
+            <p class="hero-description">Elite training. Expert coaches. Real results.</p>
+            <div class="hero-buttons">
+                <a href="#membership" class="btn btn-primary">Start Your Journey</a>
+                <a href="#classes" class="btn btn-secondary">View Classes</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Dynamic Class Schedule -->
+    <section id="classes" class="classes-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-accent">Live</span> Class Schedule
+            </h2>
+            <p class="section-subtitle">Real-time availability • Book your spot now</p>
+            
+            <div class="schedule-filters">
+                <button class="filter-btn active" data-day="all">All Days</button>
+                <button class="filter-btn" data-day="monday">Monday</button>
+                <button class="filter-btn" data-day="tuesday">Tuesday</button>
+                <button class="filter-btn" data-day="wednesday">Wednesday</button>
+                <button class="filter-btn" data-day="thursday">Thursday</button>
+                <button class="filter-btn" data-day="friday">Friday</button>
+                <button class="filter-btn" data-day="saturday">Saturday</button>
+            </div>
+
+            <div class="schedule-grid" id="scheduleGrid">
+                <!-- Dynamic class cards will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Comparison -->
+    <section id="membership" class="membership-section">
+        <div class="container">
+            <h2 class="section-title">
+                Choose Your <span class="title-accent">Membership</span>
+            </h2>
+            <p class="section-subtitle">Find the perfect plan to match your fitness goals</p>
+            
+            <div class="membership-grid">
+                <!-- Starter Tier -->
+                <div class="membership-card">
+                    <div class="card-header">
+                        <h3 class="tier-name">Starter</h3>
+                        <div class="tier-price">
+                            <span class="price-amount">$49</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="features-list">
+                        <li class="feature available">Access to gym floor</li>
+                        <li class="feature available">Basic equipment</li>
+                        <li class="feature available">2 group classes per week</li>
+                        <li class="feature available">Locker room access</li>
+                        <li class="feature unavailable">Personal training</li>
+                        <li class="feature unavailable">Nutrition planning</li>
+                        <li class="feature unavailable">Priority booking</li>
+                    </ul>
+                    <button class="membership-btn">Get Started</button>
+                </div>
+
+                <!-- Pro Tier (Popular) -->
+                <div class="membership-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-header">
+                        <h3 class="tier-name">Pro</h3>
+                        <div class="tier-price">
+                            <span class="price-amount">$99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="features-list">
+                        <li class="feature available">Unlimited gym access</li>
+                        <li class="feature available">All equipment & zones</li>
+                        <li class="feature available">Unlimited group classes</li>
+                        <li class="feature available">Premium locker room</li>
+                        <li class="feature available">2 PT sessions/month</li>
+                        <li class="feature available">Basic nutrition plan</li>
+                        <li class="feature available">Priority booking</li>
+                    </ul>
+                    <button class="membership-btn">Join Pro</button>
+                </div>
+
+                <!-- Elite Tier -->
+                <div class="membership-card">
+                    <div class="card-header">
+                        <h3 class="tier-name">Elite</h3>
+                        <div class="tier-price">
+                            <span class="price-amount">$199</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="features-list">
+                        <li class="feature available">24/7 gym access</li>
+                        <li class="feature available">VIP equipment access</li>
+                        <li class="feature available">Unlimited all classes</li>
+                        <li class="feature available">Private locker & amenities</li>
+                        <li class="feature available">8 PT sessions/month</li>
+                        <li class="feature available">Custom nutrition plan</li>
+                        <li class="feature available">Guaranteed class spots</li>
+                        <li class="feature available">Recovery zone access</li>
+                        <li class="feature available">Guest passes (4/month)</li>
+                    </ul>
+                    <button class="membership-btn">Go Elite</button>
+                </div>
+            </div>
+
+            <div class="membership-benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔒</div>
+                    <h4>No Commitment</h4>
+                    <p>Cancel anytime</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💯</div>
+                    <h4>Money-Back Guarantee</h4>
+                    <p>30-day satisfaction guarantee</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h4>Results Driven</h4>
+                    <p>Personalized goal tracking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="trainers-section">
+        <div class="container">
+            <h2 class="section-title">
+                Meet Your <span class="title-accent">Expert Trainers</span>
+            </h2>
+            <p class="section-subtitle">Certified professionals dedicated to your success</p>
+            
+            <div class="trainers-grid">
+                <!-- Trainer 1 -->
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="assets/images/marcus-johnson.jpg" alt="Marcus Johnson - Head Strength Coach" class="trainer-img">
+                        <div class="trainer-status available">Available</div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3 class="trainer-name">Marcus Johnson</h3>
+                        <p class="trainer-title">Head Strength Coach</p>
+                        <div class="trainer-badges">
+                            <span class="badge badge-strength">Strength Training</span>
+                            <span class="badge badge-olympic">Olympic Lifting</span>
+                            <span class="badge badge-sports">Sports Performance</span>
+                        </div>
+                        <p class="trainer-bio">15 years experience. Former Olympic athlete. Specializes in explosive power development.</p>
+                        <div class="trainer-stats">
+                            <div class="stat">
+                                <span class="stat-number">250+</span>
+                                <span class="stat-label">Clients</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                        </div>
+                        <button class="trainer-btn">Book Session</button>
+                    </div>
+                </div>
+
+                <!-- Trainer 2 -->
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="assets/images/sarah-chen.jpg" alt="Sarah Chen - HIIT & Cardio Specialist" class="trainer-img">
+                        <div class="trainer-status available">Available</div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3 class="trainer-name">Sarah Chen</h3>
+                        <p class="trainer-title">HIIT & Cardio Specialist</p>
+                        <div class="trainer-badges">
+                            <span class="badge badge-hiit">HIIT</span>
+                            <span class="badge badge-cardio">Cardio Conditioning</span>
+                            <span class="badge badge-nutrition">Nutrition</span>
+                        </div>
+                        <p class="trainer-bio">Master trainer with focus on fat loss and endurance. Certified nutritionist.</p>
+                        <div class="trainer-stats">
+                            <div class="stat">
+                                <span class="stat-number">300+</span>
+                                <span class="stat-label">Clients</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                        </div>
+                        <button class="trainer-btn">Book Session</button>
+                    </div>
+                </div>
+
+                <!-- Trainer 3 -->
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="assets/images/david-rodriguez.jpg" alt="David Rodriguez - Functional Fitness Expert" class="trainer-img">
+                        <div class="trainer-status busy">In Session</div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3 class="trainer-name">David Rodriguez</h3>
+                        <p class="trainer-title">Functional Fitness Expert</p>
+                        <div class="trainer-badges">
+                            <span class="badge badge-functional">Functional Training</span>
+                            <span class="badge badge-mobility">Mobility</span>
+                            <span class="badge badge-rehab">Injury Recovery</span>
+                        </div>
+                        <p class="trainer-bio">Physical therapist turned trainer. Specializes in movement quality and injury prevention.</p>
+                        <div class="trainer-stats">
+                            <div class="stat">
+                                <span class="stat-number">180+</span>
+                                <span class="stat-label">Clients</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">10</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                        </div>
+                        <button class="trainer-btn">Book Session</button>
+                    </div>
+                </div>
+
+                <!-- Trainer 4 -->
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="assets/images/emma-thompson.jpg" alt="Emma Thompson - Yoga & Mindfulness Coach" class="trainer-img">
+                        <div class="trainer-status available">Available</div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3 class="trainer-name">Emma Thompson</h3>
+                        <p class="trainer-title">Yoga & Mindfulness Coach</p>
+                        <div class="trainer-badges">
+                            <span class="badge badge-yoga">Yoga</span>
+                            <span class="badge badge-pilates">Pilates</span>
+                            <span class="badge badge-mindfulness">Mindfulness</span>
+                        </div>
+                        <p class="trainer-bio">RYT-500 certified. Combines ancient practices with modern fitness science.</p>
+                        <div class="trainer-stats">
+                            <div class="stat">
+                                <span class="stat-number">220+</span>
+                                <span class="stat-label">Clients</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                        </div>
+                        <button class="trainer-btn">Book Session</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Gallery -->
+    <section id="transformations" class="transformations-section">
+        <div class="container">
+            <h2 class="section-title">
+                Real People. <span class="title-accent">Real Results</span>
+            </h2>
+            <p class="section-subtitle">Incredible transformations from our members</p>
+            
+            <div class="transformations-grid">
+                <!-- Transformation 1 -->
+                <div class="transformation-card">
+                    <div class="transformation-images">
+                        <div class="before-after-container">
+                            <div class="image-wrapper before">
+                                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&h=400&fit=crop&crop=face" alt="Jake before transformation" class="transformation-img">
+                                <span class="image-label">Before</span>
+                            </div>
+                            <div class="arrow-divider">→</div>
+                            <div class="image-wrapper after">
+                                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=300&h=400&fit=crop&crop=face" alt="Jake after transformation" class="transformation-img">
+                                <span class="image-label">After</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="transformation-info">
+                        <h3 class="member-name">Jake Wilson</h3>
+                        <div class="transformation-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">-45</span>
+                                <span class="stat-unit">lbs</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">6</span>
+                                <span class="stat-unit">months</span>
+                            </div>
+                        </div>
+                        <p class="transformation-story">"Peak Performance changed my life. The trainers believed in me when I didn't believe in myself."</p>
+                        <div class="program-tag">Pro Membership + PT</div>
+                    </div>
+                </div>
+
+                <!-- Transformation 2 -->
+                <div class="transformation-card">
+                    <div class="transformation-images">
+                        <div class="before-after-container">
+                            <div class="image-wrapper before">
+                                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=300&h=400&fit=crop&crop=face" alt="Lisa before transformation" class="transformation-img">
+                                <span class="image-label">Before</span>
+                            </div>
+                            <div class="arrow-divider">→</div>
+                            <div class="image-wrapper after">
+                                <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=300&h=400&fit=crop&crop=face" alt="Lisa after transformation" class="transformation-img">
+                                <span class="image-label">After</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="transformation-info">
+                        <h3 class="member-name">Lisa Martinez</h3>
+                        <div class="transformation-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">-30</span>
+                                <span class="stat-unit">lbs</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">4</span>
+                                <span class="stat-unit">months</span>
+                            </div>
+                        </div>
+                        <p class="transformation-story">"The community here is amazing. Every class pushes me to be better than yesterday."</p>
+                        <div class="program-tag">Elite Membership</div>
+                    </div>
+                </div>
+
+                <!-- Transformation 3 -->
+                <div class="transformation-card">
+                    <div class="transformation-images">
+                        <div class="before-after-container">
+                            <div class="image-wrapper before">
+                                <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?w=300&h=400&fit=crop&crop=face" alt="Michael before transformation" class="transformation-img">
+                                <span class="image-label">Before</span>
+                            </div>
+                            <div class="arrow-divider">→</div>
+                            <div class="image-wrapper after">
+                                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&h=400&fit=crop&crop=center" alt="Michael after transformation" class="transformation-img">
+                                <span class="image-label">After</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="transformation-info">
+                        <h3 class="member-name">Michael Foster</h3>
+                        <div class="transformation-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">+20</span>
+                                <span class="stat-unit">lbs muscle</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">8</span>
+                                <span class="stat-unit">months</span>
+                            </div>
+                        </div>
+                        <p class="transformation-story">"Marcus helped me build strength I never thought possible. The nutrition guidance was key."</p>
+                        <div class="program-tag">Elite + Nutrition</div>
+                    </div>
+                </div>
+
+                <!-- Transformation 4 -->
+                <div class="transformation-card">
+                    <div class="transformation-images">
+                        <div class="before-after-container">
+                            <div class="image-wrapper before">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=400&fit=crop&crop=face" alt="Rachel before transformation" class="transformation-img">
+                                <span class="image-label">Before</span>
+                            </div>
+                            <div class="arrow-divider">→</div>
+                            <div class="image-wrapper after">
+                                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=300&h=400&fit=crop&crop=face" alt="Rachel after transformation" class="transformation-img">
+                                <span class="image-label">After</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="transformation-info">
+                        <h3 class="member-name">Rachel Kim</h3>
+                        <div class="transformation-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">-25</span>
+                                <span class="stat-unit">lbs</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">5</span>
+                                <span class="stat-unit">months</span>
+                            </div>
+                        </div>
+                        <p class="transformation-story">"Sarah's HIIT classes are intense but so effective. I've never felt stronger or more confident."</p>
+                        <div class="program-tag">Pro Membership</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transformation-cta">
+                <h3>Ready to Write Your Success Story?</h3>
+                <a href="#membership" class="btn btn-primary">Start Your Transformation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Ready to Reach Your Peak?</h2>
+                <p class="section-subtitle">Join hundreds of members transforming their lives</p>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" placeholder="Phone Number" required>
+                        <select required>
+                            <option value="">Select Membership</option>
+                            <option value="starter">Starter - $49/mo</option>
+                            <option value="pro">Pro - $99/mo</option>
+                            <option value="elite">Elite - $199/mo</option>
+                        </select>
+                    </div>
+                    <textarea placeholder="Tell us about your fitness goals..." rows="4"></textarea>
+                    <button type="submit" class="btn btn-primary">Get Started Today</button>
+                </form>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <h4>Location</h4>
+                            <p>123 Fitness Ave, Downtown District</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">⏰</span>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Mon-Fri: 5AM-11PM | Sat-Sun: 7AM-9PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">
+                        <span class="logo-icon">⚡</span> PEAK PERFORMANCE
+                    </h3>
+                    <p>Transform Your Body. Transform Your Life.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#classes">Classes</a></li>
+                        <li><a href="#membership">Membership</a></li>
+                        <li><a href="#trainers">Trainers</a></li>
+                        <li><a href="#transformations">Results</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Peak Performance Fitness. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
