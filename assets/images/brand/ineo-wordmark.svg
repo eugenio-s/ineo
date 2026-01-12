@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150">
+  <!-- Wordmark Only: INEO -->
+  <g id="wordmark">
+    <!-- I -->
+    <path d="M 50 40 L 50 110" stroke="#00ffcc" stroke-width="12" stroke-linecap="round" fill="none"/>
+    
+    <!-- N -->
+    <path d="M 110 110 L 110 40 L 160 110 L 160 40" 
+          stroke="#00ffcc" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    
+    <!-- E -->
+    <path d="M 240 40 L 220 40 L 220 110 L 240 110 M 220 75 L 235 75" 
+          stroke="#00ffcc" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    
+    <!-- O -->
+    <circle cx="310" cy="75" r="35" fill="none" stroke="#ff3b3b" stroke-width="12"/>
+  </g>
+  
+  <!-- Accent dot -->
+  <circle cx="360" cy="75" r="5" fill="#ff3b3b"/>
+</svg>
